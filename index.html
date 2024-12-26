@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean-Philippe Ehret - Technology Leader</title>
+    <style>
+        /* Core styles unchanged */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            color: #333;
+        }
+        :root {
+            --primary: #2c5282;
+            --secondary: #718096;
+            --accent: #4299e1;
+            --timeline-color: #e2e8f0;
+        }
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .search-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem 0;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+        }
+        
+        /* Enhanced card styles */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .expertise-card {
+            border: 1px solid var(--secondary);
+            padding: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        .expertise-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .expertise-card.expanded {
+            grid-column: 1 / -1;
+            cursor: default;
+        }
+        .expertise-card.expanded:hover {
+            transform: none;
+        }
+        .chevron {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s;
+        }
+        .expanded .chevron {
+            transform: rotate(180deg);
+        }
+        .card-preview {
+            margin-bottom: 1rem;
+        }
+        .card-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--secondary);
+        }
+        .expanded .card-content {
+            display: block;
+        }
+
+        /* Timeline styles */
+        .timeline {
+            margin: 2rem 0;
+            padding-left: 2rem;
+            border-left: 2px solid var(--timeline-color);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.1rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+        }
+        .timeline-date {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        @media print {
+            body { color: black; }
+            .search-container, .chevron { display: none; }
+            .card-content { display: block; }
+            .expertise-card { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>Jean-Philippe Ehret</h1>
+            <p>Technology Leader • Green IT Advocate • Innovation Champion</p>
+        </div>
+        <div>
+            <a href="mailto:jeanphiehret@gmail.com">jeanphiehret@gmail.com</a>
+            <p>Poukawa, New Zealand</p>
+        </div>
+    </header>
+
+    <div class="search-container">
+        <input type="search" id="searchInput" placeholder="Search skills, roles, or technologies..." 
+               aria-label="Search through CV content">
+    </div>
+
+    <main>
+        <section class="expertise-grid">
+            <div class="expertise-card" data-keywords="cto leadership management strategy">
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 9l-7 7-7-7" />
+                </svg>
+                <div class="card-preview">
+                    <h2>Executive Leadership</h2>
+                    <p>CTO at Breinchild Innovations Group, leading technology strategy and SaaS platform development. Former CEO of Jnesis with €2M revenue. Expertise in:</p>
+                    <ul>
+                        <li>Technology Strategy & Vision</li>
+                        <li>Team Building & Management</li>
+                        <li>Budget Optimization</li>
+                        <li>Product Development</li>
+                    </ul>
+                </div>
+                <div class="card-content">
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Led technical vision and development of Emplify SaaS platform</li>
+                        <li>Built and managed distributed teams across NZ, Vietnam, Uruguay, and France</li>
+                        <li>Implemented GenAI and Serverless technologies</li>
+                        <li>Optimized development costs while maintaining quality</li>
+                    </ul>
+                    <h3>Leadership Competencies</h3>
+                    <ul>
+                        <li>Strategic Planning & Execution</li>
+                        <li>Innovation Management</li>
+                        <li>Stakeholder Communication</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="expertise-card" data-keywords="java spring development architecture">
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 9l-7 7-7-7" />
+                </svg>
+                <div class="card-preview">
+                    <h2>Technical Architecture</h2>
+                    <p>25+ years of Java expertise, from core development to enterprise architecture. Specialized in:</p>
+                    <ul>
+                        <li>Java/Spring/Jakarta EE</li>
+                        <li>Microservices Architecture</li>
+                        <li>AWS Cloud Infrastructure</li>
+                        <li>GenAI Implementation</li>
+                    </ul>
+                </div>
+                <div class="card-content">
+                    <h3>Technical Expertise</h3>
+                    <ul>
+                        <li>AWS Services (ECS, Lambda, Bedrock)</li>
+                        <li>Database Design & DDD</li>
+                        <li>CI/CD & DevOps practices</li>
+                    </ul>
+                    <h3>Notable Projects</h3>
+                    <ul>
+                        <li>Emplify SaaS Platform Architecture</li>
+                        <li>US Regulated Crypto-Exchange Platform</li>
+                        <li>Enterprise COBOL to Java Migration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="expertise-card" data-keywords="green sustainable eco-design environment">
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 9l-7 7-7-7" />
+                </svg>
+                <div class="card-preview">
+                    <h2>Green IT Leadership</h2>
+                    <p>Pioneer in sustainable software development and eco-design practices:</p>
+                    <ul>
+                        <li>Environmental Impact Assessment</li>
+                        <li>Sustainable Software Foundation Design</li>
+                        <li>Digital Sustainability Workshops</li>
+                        <li>Climate Change Think Tank Contributor</li>
+                    </ul>
+                </div>
+                <div class="card-content">
+                    <h3>Sustainability Initiatives</h3>
+                    <ul>
+                        <li>Co-authored climate change think tank report</li>
+                        <li>Designed "Game of Life" for sustainability advocates</li>
+                        <li>Founded Sustainable Software Foundation</li>
+                    </ul>
+                    <h3>Methodologies</h3>
+                    <ul>
+                        <li>Green Software Design Patterns</li>
+                        <li>Digital Sustainability Metrics</li>
+                        <li>Eco-friendly Architecture</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="expertise-card" data-keywords="teaching training education mentoring">
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 9l-7 7-7-7" />
+                </svg>
+                <div class="card-preview">
+                    <h2>Education & Knowledge Sharing</h2>
+                    <p>Passionate educator with global reach:</p>
+                    <ul>
+                        <li>20,000+ Online Students</li>
+                        <li>1,000+ Face-to-face Students</li>
+                        <li>Top IT Instructor on Udemy</li>
+                        <li>Technical Writing & Documentation</li>
+                    </ul>
+                </div>
+                <div class="card-content">
+                    <h3>Teaching Experience</h3>
+                    <ul>
+                        <li>EIT Lecturer and Researcher</li>
+                        <li>Corporate Training Programs</li>
+                        <li>Discord Community Leader</li>
+                    </ul>
+                    <h3>Areas of Instruction</h3>
+                    <ul>
+                        <li>Java Development & Architecture</li>
+                        <li>Green IT Practices</li>
+                        <li>Software Design Patterns</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline">
+            <!-- Timeline content unchanged -->
+            <h2>Career Timeline</h2>
+            <div class="timeline-item" data-keywords="cto breinchild leadership saas">
+                <p class="timeline-date">2022 - Present</p>
+                <h3>CTO - Breinchild Innovations Group</h3>
+                <p>Leading technology strategy and development of Emplify SaaS platform.</p>
+            </div>
+            <div class="timeline-item" data-keywords="bryntum evangelism developer">
+                <p class="timeline-date">2021 - 2022</p>
+                <h3>Developer Evangelist - Bryntum Sweden</h3>
+                <p>Technical advocacy and community engagement for web components.</p>
+            </div>
+            <div class="timeline-item" data-keywords="eit teaching research">
+                <p class="timeline-date">2019 - 2020</p>
+                <h3>IT Lecturer and Researcher - EIT</h3>
+                <p>Advanced programming instruction and Green IT research.</p>
+            </div>
+            <div class="timeline-item" data-keywords="mccarthy development architecture">
+                <p class="timeline-date">2016 - 2018</p>
+                <h3>Fullstack Developer - McCarthy Associates</h3>
+                <p>Led major COBOL to Java modernization project.</p>
+            </div>
+            <div class="timeline-item" data-keywords="jnesis ceo business">
+                <p class="timeline-date">2008 - 2016</p>
+                <h3>CEO - Jnesis</h3>
+                <p>Founded and grew successful software consultancy to €2M revenue.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.expertise-card');
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        function closeAllCards() {
+            cards.forEach(card => {
+                card.classList.remove('expanded');
+            });
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                closeAllCards();
+                card.classList.add('expanded');
+                e.stopPropagation();
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.expertise-card')) {
+                closeAllCards();
+            }
+        });
+
+        searchInput.addEventListener('input', e => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            // Search in expertise cards
+            cards.forEach(card => {
+                const content = card.textContent.toLowerCase();
+                const keywords = card.dataset.keywords;
+                const isVisible = content.includes(searchTerm) || 
+                                (keywords && keywords.includes(searchTerm));
+                card.style.display = isVisible ? '' : 'none';
+            });
+
+            // Search in timeline
+            timelineItems.forEach(item => {
+                const content = item.textContent.toLowerCase();
+                const keywords = item.dataset.keywords;
+                const isVisible = content.includes(searchTerm) || 
+                                (keywords && keywords.includes(searchTerm));
+                item.style.display = isVisible ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
